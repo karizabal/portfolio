@@ -96,6 +96,12 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
 }
 
+.dog {
+  height: auto; 
+  max-width: 100%;
+  padding: 1.05em;
+}
+
 .main-header {
   font-size: large;
   text-align: center;
