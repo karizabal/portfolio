@@ -53,7 +53,6 @@ form {
 
 form label {
   display: grid;
-  grid-template-columns: 85px 1fr;
   grid-column: 1 / -1;
   align-items: center;
 }
