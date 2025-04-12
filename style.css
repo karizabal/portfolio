@@ -34,7 +34,6 @@ nav a {
     border-bottom-style: solid;
     border-bottom-color: var(--color-accent);
     margin-bottom: 0.0em;
-    color: var(--color-accent);
   }
 }
 
