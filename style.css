@@ -1,6 +1,129 @@
+html {
+  --color-accent: oklch(0.78 0.2074 129.54);
+  accent-color: var(--color-accent);
+}
+
 body {
-    /* Set line height to 1.5 times the font size
-         and use the OS’s UI font as the website font
-       */
-    font: 100%/1.5 system-ui;
+  font: 100%/1.5 system-ui;
+  max-width: 110ch;
+  margin-inline: auto;
+  padding: 31px;
+}
+
+nav {
+  display: flex;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+}
+
+nav ul, nav li {
+  display: contents;
+}
+
+nav a {
+  flex: 1;
+  text-decoration: none;
+  text-align: center;
+  color: inherit;
+  padding: 0.5em;
+  margin-bottom: 0.5ch;
+
+  &:hover {
+    border-bottom-width: 0.3em;
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-accent);
+    margin-bottom: 0.0em;
+    color: var(--color-accent);
   }
+}
+
+.current {
+  border-bottom-width: 0.3em;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+  margin-bottom: 0.0em;
+  font-weight: bold;
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+}
+
+form label {
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  grid-column: 1 / -1;
+  align-items: center;
+}
+
+form input,
+form textarea {
+  font: inherit;
+}
+
+form button {
+  grid-column: 1 / -1;
+  font: inherit;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  grid-template-rows: auto 1fr;
+  gap: 1em;
+}
+
+.projects article {
+  grid-row: span 3;
+}
+
+.projects article h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 300%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.cover_img {
+  display: flex;
+  justify-content: center;
+}
+
+.main-header {
+  font-size: large;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.15em;
+}
+
+.header time,
+.header .date-range {
+  display: flex;
+  gap: 0.15em;
+  font-weight: bold;
+  align-items: center;
+}
+
+section {
+  margin-block: 1.75em;
+  padding: 0.5em;
+}
+
+article {
+  margin-block: 1.3em;
+  padding: 0.15em;
+}
