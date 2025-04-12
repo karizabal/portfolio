@@ -66,7 +66,6 @@ form textarea {
 form button {
   grid-column: 1 / -1;
   font: inherit;
-  color: black;
 }
 
 .projects {
