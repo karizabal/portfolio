@@ -132,3 +132,7 @@ article {
   margin-block: 1.3em;
   padding: 0.15em;
 }
+
+.code {
+  font-family: 'Courier New', Courier, monospace;
+}
