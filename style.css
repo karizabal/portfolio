@@ -10,11 +10,19 @@ body {
   padding: 31px;
 }
 
+label.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+}
+
 nav {
+  --border-color: oklch(50% 10% 200 / 40%);
   display: flex;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
+  border-bottom-color: var(--border-color);
 }
 
 nav ul, nav li {
@@ -34,7 +42,7 @@ nav a {
     border-bottom-style: solid;
     border-bottom-color: var(--color-accent);
     margin-bottom: 0.0em;
-    background-color: oklch(from var(--color-accent) 95% 5% h);
+    background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
   }
 }
 
@@ -59,7 +67,8 @@ form label {
 }
 
 form input,
-form textarea {
+form textarea,
+label select {
   font: inherit;
 }
 
