@@ -3,24 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function() {
+          const saved = localStorage.getItem('colorScheme');
+          const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const scheme =
+            !saved || saved === 'auto'
+              ? (systemDark ? 'dark' : 'light')
+              : saved;
+          document.documentElement.setAttribute('data-theme', scheme);
+        })();
+      </script>
     <title>Contact</title>
     <link rel="stylesheet" href="../style.css"/>
     <script type="module" src="../global.js"></script>
 </head>
 <body>
-    <h1>Contact</h1>
-    <form action="mailto:karizabal19@gmail.com" method="get">
-        <label>
-            Subject:
-            <input name="subject"/>
-        </label>
+    <div class="page-wrapper">
+        <h1>Get in contact!</h1>
+        <form action="mailto:karizabal19@gmail.com" method="get">
+            <label>
+                Subject:
+                <input name="subject"/>
+            </label>
 
-        <label>
-            Message:
-            <textarea name="body"></textarea>
-        </label>
+            <label>
+                Message:
+                <textarea name="body"></textarea>
+            </label>
 
-        <button>SUBMIT</button>
-    </form>
+            <button>SUBMIT</button>
+        </form>
+    </div>
 </body>
 </html>

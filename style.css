@@ -3,11 +3,37 @@
   accent-color: var(--color-accent);
 }
 
-body {
-  font: 100%/1.5 system-ui;
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: dark;
+}
+}
+@media (prefers-color-scheme: light) {
+  :root { color-scheme: light;
+}
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+.page-wrapper {
   max-width: 110ch;
-  margin-inline: auto;
-  padding: 31px;
+  margin: auto auto;
+  padding: 1.75em;
+  min-height: 100vh;
+}
+
+body {
+  padding: 3.5em;
+  font: 100%/1.5 system-ui;
 }
 
 label.color-scheme {
@@ -23,6 +49,7 @@ nav {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--border-color);
+  margin-top: 0.5em;
 }
 
 nav ul, nav li {

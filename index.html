@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function() {
+          const saved = localStorage.getItem('colorScheme');
+          const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const scheme =
+            !saved || saved === 'auto'
+              ? (systemDark ? 'dark' : 'light')
+              : saved;
+          document.documentElement.setAttribute('data-theme', scheme);
+        })();
+      </script>
     <title>Kai Arizabal: personal site and portfolio</title>
     <link rel="stylesheet" href="style.css"/>
     <script type="module" src="global.js"></script>
 </head>
 <body>
-    <h1>Kai Arizabal</h1>
-    <p>Hi! I'm Kai, an undergraduate data science major at UCSD. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam nisi ex quaerat placeat delectus quidem, dicta fuga veritatis blanditiis exercitationem obcaecati iusto fugit sit ea aut amet. Repellat, voluptatum nesciunt!</p>
-    <div class="cover_img"><img src="images/maltese-dog.jpg" alt="maltese dog lying on its back" class="dog"/></div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum sequi ipsa maiores dolorem suscipit. Deserunt facere aliquam praesentium consectetur alias ex fugiat! Aliquid nemo eaque deleniti necessitatibus? Esse, nesciunt quo.</p>
+    <div class="page-wrapper">
+        <h1>Hi, I'm Kai Arizabal!</h1>
+        <p>Hiii! I'm Kai, an undergraduate data science major at UCSD. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam nisi ex quaerat placeat delectus quidem, dicta fuga veritatis blanditiis exercitationem obcaecati iusto fugit sit ea aut amet. Repellat, voluptatum nesciunt!</p>
+        <div class="cover_img"><img src="images/maltese-dog.jpg" alt="maltese dog lying on its back" class="dog"/></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum sequi ipsa maiores dolorem suscipit. Deserunt facere aliquam praesentium consectetur alias ex fugiat! Aliquid nemo eaque deleniti necessitatibus? Esse, nesciunt quo.</p>
+    </div>
 </body>
 </html>

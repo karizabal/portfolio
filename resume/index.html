@@ -3,134 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function() {
+          const saved = localStorage.getItem('colorScheme');
+          const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const scheme =
+            !saved || saved === 'auto'
+              ? (systemDark ? 'dark' : 'light')
+              : saved;
+          document.documentElement.setAttribute('data-theme', scheme);
+        })();
+      </script>
     <title>Resume</title>
     <link rel="stylesheet" href="../style.css"/>
     <script type="module" src="../global.js"></script>
 </head>
 <body>
-    <header class="main-header">
-        <h1>Kai Arizabal</h1>
-        <p><a href="mailto:karizabal19@gmail.com">karizabal19@gmail.com</a> | (650) 645-0008 | <a href="linkedin.com/in/karizabal">linkedin.com/in/karizabal</a></p>
-    </header>
-      
-      <section>
-        <header>
-          <h2>EDUCATION</h2>
+    <div class="page-wrapper">
+        <header class="main-header">
+            <h1>Kai Arizabal</h1>
+            <p><a href="mailto:karizabal19@gmail.com">karizabal19@gmail.com</a> | (650) 645-0008 | <a href="linkedin.com/in/karizabal">linkedin.com/in/karizabal</a></p>
         </header>
-        <hr>
-        <article>
-          <div class="header">
-            <h3 class="title">UC San Diego</h3>
-            <time datetime="2027-06">Expected June 2027</time>
-          </div>
-          <p><i>Bachelor of Science in Data Science</i></p>
-          <ul>
-            <li><b>GPA: 3.8/4.0;</b> <em>Provost Honors</em></li>
-            <li>Coursework: Calculus and Analytic Geometry for Science and Engineering, Linear Algebra, Data Structures and Algorithms for Data Science, Practice and Application of Data Science</li>
-          </ul>
-        </article>
-      </section>
-      
-      <section>
-        <header>
-          <h2>PROJECTS</h2>
-        </header>
-        <hr>
-        <article>
-          <div class="header">
-            <h3 class="title">Data Science Research Project</h3>
-            <div class="date-range">
-              <time datetime="2025-01">Jan 2025</time>
-              <span> – </span>
-              <time datetime="2025-05">May 2025</time>
+        
+        <section>
+            <header>
+            <h2>EDUCATION</h2>
+            </header>
+            <hr>
+            <article>
+            <div class="header">
+                <h3 class="title">UC San Diego</h3>
+                <time datetime="2027-06">Expected June 2027</time>
             </div>
-          </div>
-          <p><i>Coursework Final Project</i></p>
-          <ul>
-            <li>Conducted methods, such as <strong>exploratory data analysis, missingness assessments, hypothesis testing, and predictive modeling</strong>, to investigate the relationship of recipe ratings and perceived health benefits using <span class="code">python</span> libraries such as <span class="code">pandas</span> and <span class="code">plotly</span>.</li>
-            <li>Performed exploratory data analysis of the merged data from those datasets, including 12 visualizations of recipes' nutritional compositions and ratings distributions, and 3 tables of aggregated data to reveal correlative trends.</li>
-            <li>Conducted hypothesis testing on recipe ratings to identify statistically significant trends and validate assumptions about user preferences, supplemented by data visualizations.</li>
-            <li>Tested on recipe ratings to identify statistically significant trends and validate assumptions about user preferences.</li>
-            <li>Implemented modeling techniques using <span class="code">scikit-learn</span> to predict recipe popularity and user engagement.</li>
-          </ul>
-        </article>
-      </section>
+            <p><i>Bachelor of Science in Data Science</i></p>
+            <ul>
+                <li><b>GPA: 3.8/4.0;</b> <em>Provost Honors</em></li>
+                <li>Coursework: Calculus and Analytic Geometry for Science and Engineering, Linear Algebra, Data Structures and Algorithms for Data Science, Practice and Application of Data Science</li>
+            </ul>
+            </article>
+        </section>
+        
+        <section>
+            <header>
+            <h2>PROJECTS</h2>
+            </header>
+            <hr>
+            <article>
+            <div class="header">
+                <h3 class="title">Data Science Research Project</h3>
+                <div class="date-range">
+                <time datetime="2025-01">Jan 2025</time>
+                <span> – </span>
+                <time datetime="2025-05">May 2025</time>
+                </div>
+            </div>
+            <p><i>Coursework Final Project</i></p>
+            <ul>
+                <li>Conducted methods, such as <strong>exploratory data analysis, missingness assessments, hypothesis testing, and predictive modeling</strong>, to investigate the relationship of recipe ratings and perceived health benefits using <span class="code">python</span> libraries such as <span class="code">pandas</span> and <span class="code">plotly</span>.</li>
+                <li>Performed exploratory data analysis of the merged data from those datasets, including 12 visualizations of recipes' nutritional compositions and ratings distributions, and 3 tables of aggregated data to reveal correlative trends.</li>
+                <li>Conducted hypothesis testing on recipe ratings to identify statistically significant trends and validate assumptions about user preferences, supplemented by data visualizations.</li>
+                <li>Tested on recipe ratings to identify statistically significant trends and validate assumptions about user preferences.</li>
+                <li>Implemented modeling techniques using <span class="code">scikit-learn</span> to predict recipe popularity and user engagement.</li>
+            </ul>
+            </article>
+        </section>
 
-      <section>
-        <header>
-          <h2>LEADERSHIP EXPERIENCE</h2>
-        </header>
-        <hr>
-        <article>
-          <div class="header">
-            <h3 class="title">High School Campus Ministry</h3>
-            <div class="date-range">
-              <time datetime="2025-08">Aug 2025</time>
-              <span> – </span>
-              <time datetime="2023-06">Jun 2023</time>
+        <section>
+            <header>
+            <h2>LEADERSHIP EXPERIENCE</h2>
+            </header>
+            <hr>
+            <article>
+            <div class="header">
+                <h3 class="title">High School Campus Ministry</h3>
+                <div class="date-range">
+                <time datetime="2025-08">Aug 2025</time>
+                <span> – </span>
+                <time datetime="2023-06">Jun 2023</time>
+                </div>
             </div>
-          </div>
-          <p><i>Team Leader</i></p>
-          <ul>
-            <li><strong>Coordinated event logistics</strong> for 10 religious services and 8 retreats to ensure seamless transitions between activities and timely distribution of materials.</li>
-            <li>Served as the primary liaison between participants, student leaders, and leadership advisers during 5 retreats, fostering easy and effective communication.</li>
-            <li><strong>Managed schedules and resources</strong> schedules and resources for those 10 religious services and 8 retreats, building strong organizational and multitasking abilities.</li>
-            <li>Strengthened interpersonal skills by collaborating with peers and educators in a team environment.</li>
-          </ul>
-        </article>
-      </section>
+            <p><i>Team Leader</i></p>
+            <ul>
+                <li><strong>Coordinated event logistics</strong> for 10 religious services and 8 retreats to ensure seamless transitions between activities and timely distribution of materials.</li>
+                <li>Served as the primary liaison between participants, student leaders, and leadership advisers during 5 retreats, fostering easy and effective communication.</li>
+                <li><strong>Managed schedules and resources</strong> schedules and resources for those 10 religious services and 8 retreats, building strong organizational and multitasking abilities.</li>
+                <li>Strengthened interpersonal skills by collaborating with peers and educators in a team environment.</li>
+            </ul>
+            </article>
+        </section>
 
-      <section>
-        <header>
-          <h2>ACADEMIC EXPERIENCE</h2>
-        </header>
-        <hr>
-        <article>
-          <div class="header">
-            <h3 class="title">High School Yearbook Club</h3>
-            <div class="date-range">
-              <time datetime="2022-08">Aug 2022</time>
-              <span> – </span>
-              <time datetime="2023-06">Jun 2023</time>
+        <section>
+            <header>
+            <h2>ACADEMIC EXPERIENCE</h2>
+            </header>
+            <hr>
+            <article>
+            <div class="header">
+                <h3 class="title">High School Yearbook Club</h3>
+                <div class="date-range">
+                <time datetime="2022-08">Aug 2022</time>
+                <span> – </span>
+                <time datetime="2023-06">Jun 2023</time>
+                </div>
             </div>
-          </div>
-          <p><i>Editor/Photographer</i></p>
-          <ul>
-            <li>Designed and edited 10 yearbook pages for the 2022-2023 yearbook with creativity and attention to detail, meeting tight deadlines.</li>
-            <li>Captured high-quality photographs of 7 school events and the general school community that strengthened personal connections for many students.</li>
-            <li>Managed multiple tasks effectively, balancing photography, editing, and design responsibilities.</li>
-          </ul>
-        </article>
+            <p><i>Editor/Photographer</i></p>
+            <ul>
+                <li>Designed and edited 10 yearbook pages for the 2022-2023 yearbook with creativity and attention to detail, meeting tight deadlines.</li>
+                <li>Captured high-quality photographs of 7 school events and the general school community that strengthened personal connections for many students.</li>
+                <li>Managed multiple tasks effectively, balancing photography, editing, and design responsibilities.</li>
+            </ul>
+            </article>
 
-        <article>
-          <div class="header">
-            <h3 class="title">High School Drama Club</h3>
-            <div class="date-range">
-              <time datetime="2023-08">Aug 2023</time>
-              <span> – </span>
-              <time datetime="2023-06">Jun 2023</time>
+            <article>
+            <div class="header">
+                <h3 class="title">High School Drama Club</h3>
+                <div class="date-range">
+                <time datetime="2023-08">Aug 2023</time>
+                <span> – </span>
+                <time datetime="2023-06">Jun 2023</time>
+                </div>
             </div>
-          </div>
-          <p><i>Writer</i></p>
-          <ul>
-            <li>Collaborated with peers and mentors to produce creative content under tight deadlines, demonstrating teamwork and time management.</li>
-            <li>Edited scripts with attention to detail, ensuring clarity and quality of final performances.</li>
-            <li><strong>Adapted quickly to new challenges</strong>, such as writing a 10-minute play in 24 hours, while maintaining high-quality output of scenes and characters.</li>
-          </ul>
-        </article>
-      </section>
-      
-      <section>
-        <header>
-          <h2>SKILLS</h2>
-        </header>
-        <hr>
-        <article>
-          <ul>
-            <li><strong>Soft Skills:</strong> Teamwork and collaboration; Organizational and time management; Communication; Adaptability and quick learning; Interpersonal skills; Creativity</li>
-            <li><strong>Hard Skills:</strong> <span class="code">Python (pandas, numPy, plotly)</span>; Basic <span class="code">Java</span>; Adobe Photoshop; Keynote</li>
-          </ul>
-        </article>
-      </section>
+            <p><i>Writer</i></p>
+            <ul>
+                <li>Collaborated with peers and mentors to produce creative content under tight deadlines, demonstrating teamwork and time management.</li>
+                <li>Edited scripts with attention to detail, ensuring clarity and quality of final performances.</li>
+                <li><strong>Adapted quickly to new challenges</strong>, such as writing a 10-minute play in 24 hours, while maintaining high-quality output of scenes and characters.</li>
+            </ul>
+            </article>
+        </section>
+        
+        <section>
+            <header>
+            <h2>SKILLS</h2>
+            </header>
+            <hr>
+            <article>
+            <ul>
+                <li><strong>Soft Skills:</strong> Teamwork and collaboration; Organizational and time management; Communication; Adaptability and quick learning; Interpersonal skills; Creativity</li>
+                <li><strong>Hard Skills:</strong> <span class="code">Python (pandas, numPy, plotly)</span>; Basic <span class="code">Java</span>; Adobe Photoshop; Keynote</li>
+            </ul>
+            </article>
+        </section>
+    </div>
 </body>
 </html>

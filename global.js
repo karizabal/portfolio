@@ -54,15 +54,15 @@ function setColorScheme(scheme) {
     document.documentElement.style.setProperty("color-scheme", scheme);
 }
 
-select.addEventListener("input", function (event) {
-    setColorScheme( event.target.value);
-    localStorage.colorScheme =  event.target.value;;
-});
-
 if ("colorScheme" in localStorage) {
     setColorScheme(localStorage.colorScheme);
     select.value = localStorage.colorScheme;
 }
+
+select.addEventListener("input", function (event) {
+    setColorScheme( event.target.value);
+    localStorage.colorScheme =  event.target.value;;
+});
 
 let form = document.querySelector("form")
 
