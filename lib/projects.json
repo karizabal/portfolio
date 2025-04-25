@@ -1,61 +1,73 @@
 [
     {
         "title": "U.S. Food Exports Processing Scores",
+        "year": 2025,
         "image": "images/106project01.png",
-        "description": "This is a data visualization project that involved extensive data preprocessing and exploratory data analysis of two datasets on food processing and U.S. exports. The final visualization highlights the countries that regularly export processed foods to the States."
+        "description": "This is a data visualization project that involved extensive data preprocessing and exploratory data analysis of two datasets on food processing and U.S. exports. The final visualization identifies the countries continuously exporting processed foods to the States."
     },
     {
         "title": "Exploring the Effect of Diet Health on Recipe Ratings",
+        "year": 2025,
         "image": "images/carbs-dependency-test.png",
         "description": "This project investigates the relationship of ratings of online recipes and their health benefits through methods such as exploratory data analysis, hypothesis testing, and predictive modeling."
     },
     {
         "title": "Laudantium voluptatem iure vero.",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Quidem molestiae aliquid mollitia, ratione amet incidunt sapiente asperiores quibusdam soluta pariatur labore, est itaque sed. Quos minus dolorem et totam accusamus nam maiores quis quo aperiam? Voluptate, laborum! Minus?"
     },
     {
         "title": "Praesentium perspiciatis asperiores velit!",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Laborum veritatis animi doloremque officiis eius ea maxime ipsam perferendis reiciendis pariatur. Amet, totam magnam natus sint at assumenda fugiat deleniti sed modi vitae ut, nesciunt eligendi maxime doloremque impedit."
     },
     {
         "title": "Maiores odio asperiores quidem.",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Nobis repudiandae saepe facere consectetur suscipit similique velit. Ipsum vitae ducimus architecto voluptates enim odit, vero est cupiditate quidem minus quae fuga officiis laudantium numquam aliquam placeat tempore recusandae! Animi!"
     },
     {
         "title": "Harum doloremque commodi corrupti.",
+        "year": 2024,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Ut tenetur obcaecati, provident tempora eveniet nostrum doloremque numquam qui laudantium, ratione neque illum aspernatur nobis ipsa, accusamus ea cumque aliquid. Vel eveniet iste maxime architecto eum expedita. Commodi, ipsam."
     },
     {
         "title": "Animi nisi quis fugit?",
+        "year": 2024,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Quisquam, fuga laboriosam maiores, blanditiis temporibus enim assumenda corporis laudantium fugiat qui incidunt? Dolore molestias delectus rem fugit, nesciunt aspernatur voluptate. Consequatur sapiente consequuntur minima cum non natus aliquid possimus."
     },
     {
         "title": "Enim necessitatibus impedit temporibus?",
+        "year": 2024,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Delectus recusandae est, possimus laborum ratione consequuntur tenetur ipsum pariatur labore laboriosam, officia reiciendis. Culpa accusamus voluptatem veritatis animi, eius iusto ex aperiam ducimus repudiandae. Veritatis soluta cupiditate et voluptate."
     },
     {
         "title": "Quis doloribus velit maiores.",
+        "year": 2024,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Cupiditate, voluptatum incidunt. Voluptas aut nesciunt id consectetur perspiciatis at consequuntur quo corrupti pariatur facere totam, necessitatibus enim explicabo sint praesentium quasi nisi quia dicta placeat nobis officia dolore fuga?"
     },
     {
         "title": "Cupiditate mollitia tempora ab!",
+        "year": 2024,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Non officiis sed asperiores dolorum itaque accusamus qui neque voluptatum corrupti, ex vitae, ullam tempora laborum. Vero, magnam inventore dolore ad eum vel id excepturi ullam, placeat mollitia, quidem nemo!"
     },
     {
         "title": "Quas necessitatibus porro iure!",
+        "year": 2023,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Molestias reprehenderit labore assumenda numquam, doloribus perferendis laboriosam, iusto a eaque debitis quidem nisi earum soluta possimus ipsa maiores culpa sit magnam illum iure rem at? Possimus sequi non quas?"
     },
     {
         "title": "Deserunt nulla quos voluptatibus?",
+        "year": 2023,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Obcaecati, fugit voluptate. Dolorum, quis repellat nesciunt iusto ducimus iste. Repellat, voluptate molestias. Eos, totam nostrum sit culpa amet cum inventore nemo magnam? Doloremque autem consequuntur nam culpa illum animi."
     }
