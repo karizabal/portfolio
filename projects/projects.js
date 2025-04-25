@@ -7,4 +7,3 @@ import { fetchJSON, renderProjects } from '../global.js';
   const title = document.querySelector('.projects-title');
   title.textContent = `${projects.length} ${title.textContent}`;
 })();
-
