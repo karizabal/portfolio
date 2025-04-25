@@ -11,6 +11,7 @@
   :root { color-scheme: dark;
 }
 }
+
 @media (prefers-color-scheme: light) {
   :root { color-scheme: light;
 }
@@ -27,7 +28,10 @@ html[data-theme="dark"] {
 .page-wrapper {
   max-width: 110ch;
   margin: auto auto;
-  padding: 1.75em;
+  padding-left: 3.75em;
+  padding-right: 3.75em;
+  padding-top: 1.75em;
+  padding-bottom: 1.75em;
   min-height: 100vh;
 }
 
@@ -111,7 +115,14 @@ form button {
   gap: 1em;
 }
 
+.projects img {
+  max-width: 100%;
+  height: auto;
+}
+
 .projects article {
+  display: grid;
+  grid-template-rows: subgrid;
   grid-row: span 3;
 }
 
@@ -121,6 +132,10 @@ form button {
 
 h1 {
   font-size: 300%;
+}
+
+h2 {
+  font-size: 175%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -171,4 +186,26 @@ article {
 
 .code {
   font-family: 'Courier New', Courier, monospace;
+}
+
+dl {
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  dt {
+    grid-row: 1;
+    font-weight: light;
+  }
+
+  dd {
+    grid-row: 2;
+    text-align: start;
+    margin-left: 0;
+    font-size: 150%;
+  }
+}
+
+header h2 {
+  margin-block-start: 3.55em;
+  margin-block-end: 1.45em;
 }
