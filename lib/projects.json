@@ -2,13 +2,13 @@
     {
         "title": "U.S. Food Exports Processing Scores",
         "year": 2025,
-        "image": "images/106project01.png",
+        "image": "/images/106project01.png",
         "description": "This is a data visualization project that involved extensive data preprocessing and exploratory data analysis of two datasets on food processing and U.S. exports. The final visualization identifies the countries continuously exporting processed foods to the States."
     },
     {
         "title": "Exploring the Effect of Diet Health on Recipe Ratings",
         "year": 2025,
-        "image": "images/carbs-dependency-test.png",
+        "image": "/images/carbs-dependency-test.png",
         "description": "This project investigates the relationship of ratings of online recipes and their health benefits through methods such as exploratory data analysis, hypothesis testing, and predictive modeling."
     },
     {
