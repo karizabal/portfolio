@@ -11,10 +11,10 @@ const profileStats = document.querySelector('#profile-stats');
 if (profileStats) {
     profileStats.innerHTML = `
           <dl>
-            <dt>PUBLIC REPOS</dt><dd>${githubData.public_repos}</dd>
-            <dt>PUBLIC GISTS</dt><dd>${githubData.public_gists}</dd>
-            <dt>FOLLOWERS</dt><dd>${githubData.followers}</dd>
-            <dt>FOLLOWING</dt><dd>${githubData.following}</dd>
+            <dt>Repos</dt><dd>${githubData.public_repos}</dd>
+            <dt>Gists</dt><dd>${githubData.public_gists}</dd>
+            <dt>Followers</dt><dd>${githubData.followers}</dd>
+            <dt>Following</dt><dd>${githubData.following}</dd>
           </dl>
       `;
   }

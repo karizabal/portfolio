@@ -194,7 +194,8 @@ dl {
 
   dt {
     grid-row: 1;
-    font-weight: light;
+    font-weight: lighter;
+    text-transform: uppercase;
   }
 
   dd {
