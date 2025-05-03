@@ -8,13 +8,15 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root { color-scheme: dark;
-}
+  :root {
+    color-scheme: dark;
+  }
 }
 
 @media (prefers-color-scheme: light) {
-  :root { color-scheme: light;
-}
+  :root {
+    color-scheme: light;
+  }
 }
 
 html[data-theme="light"] {
@@ -191,22 +193,63 @@ article {
 dl {
   display: grid;
   grid-template-rows: auto 1fr;
+}
 
-  dt {
-    grid-row: 1;
-    font-weight: lighter;
-    text-transform: uppercase;
-  }
+dl dt {
+  grid-row: 1;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
 
-  dd {
-    grid-row: 2;
-    text-align: start;
-    margin-left: 0;
-    font-size: 150%;
-  }
+dl dd {
+  grid-row: 2;
+  text-align: start;
+  margin-left: 0;
+  font-size: 150%;
 }
 
 header h2 {
   margin-block-start: 3.55em;
   margin-block-end: 1.45em;
+}
+
+
+#projects-plot {
+  max-width: 17em;
+  margin-block: 2em;
+  overflow: visible;
+  min-width: 10em;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+  min-width: 7.45em;
+  gap: 0.3em;
+  padding: 0.75em;
+  margin: 3em;
+  border: 1px solid #ccc;
+  flex: 1;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.swatch {
+  background-color: var(--color);
+  border-radius: 50%;
+  height: 13px;
+  aspect-ratio: 1 / 1;
+}
+
+.count {
+  font-weight: lighter;
+}
+
+.pie-container {
+  display: flex;
+  align-items: center;
 }
