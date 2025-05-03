@@ -9,9 +9,13 @@ import { fetchJSON, renderProjects } from '../global.js';
   title.textContent = `${projects.length} ${title.textContent}`;
   renderProjects(projects, container, 'h2');
 
+  const nYears = new Set(projects.map(project => project.year)).size;
+  const colors = d3.scaleOrdinal(d3.quantize(d3.interpolateBuGn, nYears));
+  
   function renderPieChart(projectsGiven) {
     const svg = d3.select('svg');
     const legend = d3.select('.legend');
+    let selectedIndex = -1;
 
     svg.selectAll('path').remove();
     legend.selectAll('li').remove();
@@ -21,6 +25,7 @@ import { fetchJSON, renderProjects } from '../global.js';
       (v) => v.length,
       (d) => d.year,
     );
+
     let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
     let sliceGenerator = d3.pie().value((d) => d.value);
   
@@ -28,24 +33,34 @@ import { fetchJSON, renderProjects } from '../global.js';
       return { value: count, label: year };
     });
 
-    const colors = d3.scaleOrdinal(d3.quantize(d3.interpolateViridis, data.length));
-
     let arcData = sliceGenerator(data);
     let arcs = arcData.map((d) => arcGenerator(d));
 
     arcs.forEach((arc, idx) => {
-      d3.select('svg')
+      svg
         .append('path')
         .attr('d', arc)
-        .attr('fill', colors(idx));
+        .attr('fill', colors(idx))
+        .on('click', () => {
+          selectedIndex = selectedIndex === idx ? -1 : idx;
+          svg
+            .selectAll('path')
+            .attr('class', (_, idx) => (
+              idx === selectedIndex ? 'selected' : null
+            ));
+          legend
+            .selectAll('li')
+            .attr('class', (_, idx) => (
+              idx === selectedIndex ? 'selected' : null
+            ));
+        });
     })
 
     data.forEach((d, idx) => {
       legend
         .append('li')
         .attr('style', `--color:${colors(idx)}`)
-        .attr('class', 'legend-item')
-        .html(`<span class="swatch"></span> ${d.label} <span class="count">(${d.value})</span>`);
+        .html(`<span class="swatch"></span> ${d.label} <span class="count">(${d.value})</span>`)
     })
   };
 
