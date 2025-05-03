@@ -44,7 +44,6 @@ import { fetchJSON, renderProjects } from '../global.js';
         .append('path')
         .attr('d', arc)
         .attr('fill', colors(idx))
-        .attr('class', (_, idx) => idx === selectedIndex ? 'selected' : null)
         .on('click', () => {
           selectedIndex = selectedIndex === idx ? -1 : idx;
           svg
@@ -60,10 +59,9 @@ import { fetchJSON, renderProjects } from '../global.js';
           if (selectedIndex === -1) {
             year = '';
             current = projects;
-            renderPieChart(current);
           } else {
             year = data[selectedIndex].label;
-            current = current.filter(project => project.year === year);
+            current = projects.filter(project => project.year === year);
           }
           renderProjects(current, container, 'h2');
         });
@@ -73,7 +71,6 @@ import { fetchJSON, renderProjects } from '../global.js';
       legend
         .append('li')
         .attr('style', `--color:${colors(idx)}`)
-        .attr('class', (_, idx) => idx === selectedIndex ? 'selected' : null)
         .html(`<span class="swatch"></span> ${d.label} <span class="count">(${d.value})</span>`)
     })
 
