@@ -59,6 +59,7 @@ import { fetchJSON, renderProjects } from '../global.js';
           if (selectedIndex === -1) {
             year = '';
             current = projects;
+            renderPieChart(current);
           } else {
             year = data[selectedIndex].label;
             current = projects.filter(project => project.year === year);
