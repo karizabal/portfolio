@@ -272,3 +272,8 @@ path {
     fill: var(--color);
   }
 }
+
+.searchBar {
+  display: block;
+  width: 100%;
+}

@@ -11,9 +11,10 @@ import { fetchJSON, renderProjects } from '../global.js';
 
   const nYears = new Set(projects.map(project => project.year)).size;
   const colors = d3.scaleOrdinal(d3.quantize(d3.interpolateBuGn, nYears));
-  
+
+  let current = projects;
+  let year = '';
   let selectedIndex = -1;
-  let query = '';
 
   function renderPieChart(projectsGiven) {
     const svg = d3.select('svg');
@@ -43,6 +44,7 @@ import { fetchJSON, renderProjects } from '../global.js';
         .append('path')
         .attr('d', arc)
         .attr('fill', colors(idx))
+        .attr('class', (_, idx) => idx === selectedIndex ? 'selected' : null)
         .on('click', () => {
           selectedIndex = selectedIndex === idx ? -1 : idx;
           svg
@@ -56,11 +58,14 @@ import { fetchJSON, renderProjects } from '../global.js';
               idx === selectedIndex ? 'selected' : null
             ));
           if (selectedIndex === -1) {
-            renderProjects(projects, container, 'h2');
+            year = '';
+            current = projects;
+            renderPieChart(current);
           } else {
-            let filtered = projects.filter(project => project.year === data[selectedIndex].label);
-            renderProjects(filtered, container, 'h2');
+            year = data[selectedIndex].label;
+            current = current.filter(project => project.year === year);
           }
+          renderProjects(current, container, 'h2');
         });
     });
 
@@ -68,6 +73,7 @@ import { fetchJSON, renderProjects } from '../global.js';
       legend
         .append('li')
         .attr('style', `--color:${colors(idx)}`)
+        .attr('class', (_, idx) => idx === selectedIndex ? 'selected' : null)
         .html(`<span class="swatch"></span> ${d.label} <span class="count">(${d.value})</span>`)
     })
 
@@ -75,16 +81,20 @@ import { fetchJSON, renderProjects } from '../global.js';
 
   renderPieChart(projects);
 
+  let query = '';
   let searchInput = document.querySelector('.searchBar');
   
   searchInput.addEventListener('input', (event) => {
+    const base = (year !== '')
+      ? projects.filter(project => project.year === year)
+      : projects;
     query = event.target.value;
-    let filtered = projects.filter((project) => {
+    current = base.filter((project) => {
       let values = Object.values(project).join('\n').toLowerCase();
       return values.includes(query.toLowerCase());
     });
-    renderProjects(filtered, container, 'h2');
-    renderPieChart(filtered);
+    renderProjects(current, container, 'h2');
+    renderPieChart(current);
   });
 
 })();
