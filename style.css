@@ -232,7 +232,7 @@ header h2 {
   flex: 1;
 }
 
-.legend-item {
+.legend li {
   display: flex;
   align-items: center;
   gap: 0.3em;
@@ -252,4 +252,23 @@ header h2 {
 .pie-container {
   display: flex;
   align-items: center;
+}
+
+&:has(path:hover) {
+  path:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+path {
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
 }
