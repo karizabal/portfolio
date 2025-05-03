@@ -12,10 +12,12 @@ import { fetchJSON, renderProjects } from '../global.js';
   const nYears = new Set(projects.map(project => project.year)).size;
   const colors = d3.scaleOrdinal(d3.quantize(d3.interpolateBuGn, nYears));
   
+  let selectedIndex = -1;
+  let query = '';
+
   function renderPieChart(projectsGiven) {
     const svg = d3.select('svg');
     const legend = d3.select('.legend');
-    let selectedIndex = -1;
 
     svg.selectAll('path').remove();
     legend.selectAll('li').remove();
@@ -54,7 +56,7 @@ import { fetchJSON, renderProjects } from '../global.js';
               idx === selectedIndex ? 'selected' : null
             ));
         });
-    })
+    });
 
     data.forEach((d, idx) => {
       legend
@@ -62,11 +64,11 @@ import { fetchJSON, renderProjects } from '../global.js';
         .attr('style', `--color:${colors(idx)}`)
         .html(`<span class="swatch"></span> ${d.label} <span class="count">(${d.value})</span>`)
     })
+
   };
 
   renderPieChart(projects);
 
-  let query = '';
   let searchInput = document.querySelector('.searchBar');
   
   searchInput.addEventListener('input', (event) => {
