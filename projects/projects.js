@@ -55,6 +55,12 @@ import { fetchJSON, renderProjects } from '../global.js';
             .attr('class', (_, idx) => (
               idx === selectedIndex ? 'selected' : null
             ));
+          if (selectedIndex === -1) {
+            renderProjects(projects, container, 'h2');
+          } else {
+            let filtered = projects.filter(project => project.year === data[selectedIndex].label);
+            renderProjects(filtered, container, 'h2');
+          }
         });
     });
 
