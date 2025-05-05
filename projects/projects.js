@@ -29,7 +29,7 @@ import { fetchJSON, renderProjects } from '../global.js';
       (d) => d.year,
     );
 
-    let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
+    let arcGenerator = d3.arc().innerRadius(24).outerRadius(50);
     let sliceGenerator = d3.pie().value((d) => d.value);
   
     let data = rolledData.map(([year, count]) => {
