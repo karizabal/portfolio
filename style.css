@@ -50,7 +50,7 @@ label.color-scheme {
 }
 
 nav {
-  --border-color: oklch(50% 10% 200 / 40%);
+  --border-color: oklch(0.5 0.0025 200 / 40%);
   display: flex;
   border-bottom-width: 1px;
   border-bottom-style: solid;
@@ -82,7 +82,7 @@ nav a {
 .current {
   border-bottom-width: 0.3em;
   border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
+  border-bottom-color: oklch(0.8 0.0049 200);
   margin-bottom: 0.0em;
   font-weight: bold;
 }
@@ -217,8 +217,8 @@ dl dd {
   top: 1em;
   left: 1em;
   padding: 0.15em;
-  background-color: white;
-  box-shadow: 0.15em 0.15em 0.1em #aaaaaa;
+  color-scheme: inherit;
+  box-shadow: 0.15em 0.15em 0.1em oklch(0.5 0.0025 200 / 40%);
 }
 
 dl.tooltip[hidden]:not(:hover, :focus-within) {
