@@ -193,7 +193,8 @@ article {
 dl {
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: 0.65em;
+  gap: 0.75em;
+  margin: 0.35em;
 }
 
 dl dt {
@@ -207,6 +208,22 @@ dl dd {
   text-align: start;
   margin-left: 0;
   font-size: 150%;
+}
+
+.tooltip {
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  padding: 0.15em;
+  background-color: white;
+  box-shadow: 0.15em 0.15em 0.1em #aaaaaa;
+}
+
+dl.tooltip[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
 }
 
 header h2 {
@@ -281,4 +298,14 @@ path {
 
 .gridlines {
   opacity: 15%;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
 }
