@@ -1,5 +1,5 @@
 :root {
-  --color-accent: oklch(0.78 0.2074 129.54);
+  --color-accent: oklch(0.78 0.2071 129.54);
   accent-color: var(--color-accent);
 }
 
@@ -193,6 +193,7 @@ article {
 dl {
   display: grid;
   grid-template-rows: auto 1fr;
+  gap: 0.65em;
 }
 
 dl dt {
@@ -276,4 +277,8 @@ path {
 .searchBar {
   display: block;
   width: 100%;
+}
+
+.gridlines {
+  opacity: 15%;
 }
