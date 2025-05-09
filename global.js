@@ -7,12 +7,12 @@ const BASE_PATH = (location.hostname === "localhost" || location.hostname === "1
   : "/portfolio/";
 
 let pages = [
-    { url: '', title: 'home' },
-    { url: 'projects/', title: 'projects' },
-    { url: 'resume/', title: 'resume' },
-    { url: 'contact/', title: 'contact' },
-    { url: 'meta/', title: 'meta' },
-    { url: 'https://github.com/karizabal', title: 'github' },
+    { url: '', title: 'Home' },
+    { url: 'projects/', title: 'Projects' },
+    { url: 'resume/', title: 'Resume' },
+    { url: 'contact/', title: 'Contact' },
+    { url: 'meta/', title: 'Meta' },
+    { url: 'https://github.com/karizabal', title: 'Github' },
 ];
 
 let nav = document.createElement('nav');
