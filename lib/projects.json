@@ -1,5 +1,11 @@
 [
     {
+        "title": "U.S. Abortion Trends by Political Party",
+        "year": 2025,
+        "image": "images/project02.png",
+        "description": "Through intentionally earnest or deceptive designs, this project illustrates how narrative can convince an audience of certain U.S. abortions trends by political party."
+    },
+    {
         "title": "U.S. Food Exports Processing Scores",
         "year": 2025,
         "image": "images/project01.png",
@@ -10,12 +16,6 @@
         "year": 2025,
         "image": "images/carbs-dependency-test.png",
         "description": "Investigates the relationship of ratings of online recipes and their health benefits through methods such as exploratory data analysis, hypothesis testing, and predictive modeling."
-    },
-    {
-        "title": "Laudantium voluptatem iure vero.",
-        "year": 2025,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Quidem molestiae aliquid mollitia, ratione amet incidunt sapiente asperiores quibusdam soluta pariatur labore, est itaque sed. Quos minus dolorem et totam accusamus nam maiores quis quo aperiam? Voluptate, laborum! Minus?"
     },
     {
         "title": "Praesentium perspiciatis asperiores velit!",
