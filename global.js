@@ -9,7 +9,7 @@ const BASE_PATH = (location.hostname === "localhost" || location.hostname === "1
 let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
-    { url: 'resume/', title: 'Resume' },
+    // { url: 'resume/', title: 'Resume' },
     { url: 'contact/', title: 'Contact' },
     { url: 'meta/', title: 'Meta' },
     { url: 'https://github.com/karizabal', title: 'Github' },
