@@ -309,6 +309,9 @@ circle {
   transition: 200ms;
   transform-origin: center;
   transform-box: fill-box;
+  @starting-style {
+    r: 0;
+  }
 }
 
 circle:hover {
@@ -331,4 +334,22 @@ circle.selected {
   stroke-opacity: 0.7;
   stroke-dasharray: 5 3;
   animation: marching-ants 2s linear infinite;
+}
+
+#commit-filter {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+}
+
+#commit-filter label {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+}
+
+#commit-progress {
+  flex: 1;
+  min-width: 0;
+  margin: 0 0.75em;
 }
