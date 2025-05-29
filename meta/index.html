@@ -24,13 +24,24 @@
             <time id="time"></time>
           </label>
         </div>
+
+        <dl id="files">
+          <!-- we want the following structure for each file:
+          <div>
+            <dt>
+              <code>{file.name}</code>
+            </dt>
+            <dd>{file.lines.length} lines</dd>
+          </div>
+          -->
+        </dl>
         
-        <div id="stats"></div>
+        <div class="stats" id="stats"></div>
 
         <h2>Commits by time of day</h2>
         
         <div id="chart"></div>
-        <dl id="commit-tooltip" class="info tooltip" hidden>
+        <dl id="commit-tooltip" class="tooltip" hidden>
           <dt>Commit</dt>
           <dd>
             <a href="" id="commit-link" target="_blank"></a>

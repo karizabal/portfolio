@@ -190,25 +190,25 @@ article {
   font-family: 'Courier New', Courier, monospace;
 }
 
-dl {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  gap: 0.75em;
-  margin: 0.35em;
-}
+  dl {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 0.75em;
+    margin: 0.35em;
+  }
 
-dl dt {
-  grid-row: 1;
-  font-weight: lighter;
-  text-transform: uppercase;
-}
+  dl dt {
+    grid-row: 1;
+    font-weight: lighter;
+    text-transform: uppercase;
+  }
 
-dl dd {
-  grid-row: 2;
-  text-align: start;
-  margin-left: 0;
-  font-size: 145%;
-}
+  dl dd {
+    grid-row: 2;
+    text-align: start;
+    margin-left: 0;
+    font-size: 145%;
+  }
 
 .tooltip {
   box-shadow: 0.15em 0.15em 0.3em rgb(19, 19, 19);
@@ -309,9 +309,6 @@ circle {
   transition: 200ms;
   transform-origin: center;
   transform-box: fill-box;
-  @starting-style {
-    r: 0;
-  }
 }
 
 circle:hover {
@@ -340,6 +337,7 @@ circle.selected {
   display: flex;
   align-items: baseline;
   width: 100%;
+  margin: 0.5em;
 }
 
 #commit-filter label {
@@ -352,4 +350,27 @@ circle.selected {
   flex: 1;
   min-width: 0;
   margin: 0 0.75em;
+}
+
+#files {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin: 0.5em;
+
+  > div {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  dt {
+    grid-column: 1;
+    text-transform: none;
+  }
+
+  dd {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 100%;
+  }
 }
