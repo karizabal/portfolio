@@ -12,56 +12,51 @@
     <div class="page-wrapper">
         <h1>Meta Data</h1>
         
-        <div id="commit-filter">
-          <label for="commit-progress">Show commits until:
-            <input
-              type="range"
-              id="commit-progress"
-              min="0"
-              max="100"
-              value="100"
-            >
-            <time id="time"></time>
-          </label>
+        <div class="stats" id="stats"></div>
+        
+        <h2>Evolution over time</h2>
+
+        <div id="scrolly-1">
+
+          <div id="scatter-story"></div>
+    
+          <div id="scatter-plot">
+            <h2>Commits by time of day</h2>
+            <div id="chart"></div>
+    
+            <dl id="commit-tooltip" class="tooltip" hidden>
+              <dt>Commit</dt>
+              <dd><a href="" id="commit-link" target="_blank"></a></dd>
+    
+              <dt>Date</dt>
+              <dd id="commit-date"></dd>
+    
+              <dt>Time</dt>
+              <dd id="commit-time"></dd>
+    
+              <dt>Author</dt>
+              <dd id="commit-author"></dd>
+    
+              <dt>Lines Edited</dt>
+              <dd id="commit-lines"></dd>
+            </dl>
+
+            <p id="selection-count">No commits selected</p>
+            <dl id="language-breakdown" class="stats"></dl>
+
+          </div>
         </div>
 
-        <dl id="files">
-          <!-- we want the following structure for each file:
-          <div>
-            <dt>
-              <code>{file.name}</code>
-            </dt>
-            <dd>{file.lines.length} lines</dd>
+        <div id="whitespace"></div>
+        <h2>Codebase evolution</h2>
+
+        <div id="scrolly-2">
+          <div id="files-plot">
+            <dl id="files"></dl>
           </div>
-          -->
-        </dl>
-        
-        <div class="stats" id="stats"></div>
 
-        <h2>Commits by time of day</h2>
-        
-        <div id="chart"></div>
-        <dl id="commit-tooltip" class="tooltip" hidden>
-          <dt>Commit</dt>
-          <dd>
-            <a href="" id="commit-link" target="_blank"></a>
-          </dd>
-        
-          <dt>Date</dt>
-          <dd id="commit-date"></dd>
-          
-          <dt>Time</dt>
-          <dd id="commit-time"></dd>
-          
-          <dt>Author</dt>
-          <dd id="commit-author"></dd>
-
-          <dt>Lines Edited</dt>
-          <dd id="commit-lines"></dd>
-        </dl>
-        
-        <p id="selection-count">No commits selected</p>
-        <dl id="language-breakdown" class="stats"></dl>
+          <div id="files-story"></div>
+        </div> 
     </div>
 </body>
 </html>

@@ -1,4 +1,5 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
+import scrollama from 'https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm';
 
 async function loadData() {
   const data = await d3.csv('loc.csv', (row) => ({
@@ -15,7 +16,7 @@ async function loadData() {
   
 function processCommits(data) {
   return d3
-    .groups(data, (d) => d.commit)
+    .groups(data, d => d.commit)
     .map(([commit, lines]) => {
       let first = lines[0];
       let { author, date, time, timezone, datetime } = first;
@@ -31,12 +32,10 @@ function processCommits(data) {
         totalLines: lines.length,
       };
   
-      Object.defineProperty(ret, 'lines', {
-        value: lines,
-      });
-  
+      Object.defineProperty(ret, 'lines', { value: lines });
       return ret;
-  });
+    })
+    .sort((a, b) => d3.ascending(a.datetime, b.datetime));
 }
 
 function renderCommitInfo(data, commits) {
@@ -316,16 +315,6 @@ let commits = processCommits(data);
 renderCommitInfo(data, commits); 
 renderScatterPlot(data, commits);
 
-let commitProgress = 100;
-let timeScale = d3
-  .scaleTime()
-  .domain([
-    d3.min(commits, (d) => d.datetime),
-    d3.max(commits, (d) => d.datetime),
-  ])
-  .range([0, 100]);
-
-let filteredCommits = commits;
 let colors = d3.scaleOrdinal(d3.schemeTableau10);
 function updateFileDisplay(filteredCommits) {
   let lines = filteredCommits.flatMap(d => d.lines);
@@ -360,21 +349,81 @@ function updateFileDisplay(filteredCommits) {
     .attr('style', (d) => `--color: ${colors(d.type)}`);
   }
 
-let commitMaxTime = timeScale.invert(commitProgress);
+d3.select('#scatter-story')
+  .selectAll('.step')
+  .data(commits)
+  .join('div')
+  .attr('class', 'step')
+  .html(
+    (d, i) => `
+		On ${d.datetime.toLocaleString('en', {
+      dateStyle: 'full',
+      timeStyle: 'short',
+    })},
+		I made <a href="${d.url}" target="_blank">${
+      i > 0 ? 'another glorious commit' : 'my first commit, and it was glorious'
+    }</a>.
+		I edited ${d.totalLines} line(s) across ${
+      d3.rollups(
+        d.lines,
+        (D) => D.length,
+        (d) => d.file,
+      ).length
+    } file(s).
+		Then I looked over all I had made, and I saw that it was very good.
+	`,
+  );
 
-const slider = document.getElementById('commit-progress');
-const time = document.getElementById('time');
+function onStepEnter(response) {
+  const commit = response.element.__data__;
+  
+  const idx = commits.findIndex(d => d.id === commit.id);
+  const visibleCommits = commits.slice(0, idx + 1);
 
-function onTimeSliderChange() {
-  commitProgress = +slider.value;
-  commitMaxTime  = timeScale.invert(commitProgress);
-  time.textContent = commitMaxTime
-    .toLocaleString('en', { dateStyle: 'long', timeStyle: 'short' });
-  filteredCommits = commits.filter(d => d.datetime <= commitMaxTime);
-  updateScatterPlot(data, filteredCommits);
-  renderCommitInfo(data, filteredCommits);
-  updateFileDisplay(filteredCommits);
+  updateScatterPlot(data, visibleCommits);
+  renderCommitInfo(data, visibleCommits);
 }
 
-slider.addEventListener('input', onTimeSliderChange);
-onTimeSliderChange();
+const scroller = scrollama();
+scroller
+  .setup({
+    container: '#scrolly-1',
+    graphic: '#scatter-plot',
+    step: '#scrolly-1 .step',
+    offset: 0.5,
+  })
+  .onStepEnter(onStepEnter);
+
+d3.select('#files-story')
+  .selectAll('.file-step')
+  .data(commits)
+  .join('div')
+    .attr('class', 'file-step')
+    .html((d, i) => `
+      On ${d.datetime.toLocaleString('en', {
+        dateStyle: 'full',
+        timeStyle: 'short',
+      })},
+      I made <a href="${d.url}" target="_blank">${
+        i > 0 ? 'another glorious commit' : 'my first commit, and it was glorious'
+      }</a>.
+      I edited ${d.totalLines} line(s) across ${
+        d3.rollups(d.lines, v => v.length, d => d.file).length
+      } file(s).
+      Then I looked over all I had made, and I saw that it was very good.
+    `);
+
+function onFileStepEnter(response) {
+  const commit = response.element.__data__;
+  const idx = commits.findIndex(c => c.id === commit.id);
+  const visibleCommits = commits.slice(0, idx + 1);
+  updateFileDisplay(visibleCommits);
+}
+
+const scrollerFiles = scrollama();
+scrollerFiles
+  .setup({
+    container: '#scrolly-2',
+    step: '#scrolly-2 .file-step',
+  })
+  .onStepEnter(onFileStepEnter);

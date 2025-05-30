@@ -190,25 +190,26 @@ article {
   font-family: 'Courier New', Courier, monospace;
 }
 
-  dl {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    gap: 0.75em;
-    margin: 0.35em;
-  }
+dl {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.75em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
 
-  dl dt {
-    grid-row: 1;
-    font-weight: lighter;
-    text-transform: uppercase;
-  }
+dl dt {
+  grid-row: 1;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
 
-  dl dd {
-    grid-row: 2;
-    text-align: start;
-    margin-left: 0;
-    font-size: 145%;
-  }
+dl dd {
+  grid-row: 2;
+  text-align: start;
+  margin-left: 0;
+  font-size: 145%;
+}
 
 .tooltip {
   box-shadow: 0.15em 0.15em 0.3em rgb(19, 19, 19);
@@ -394,4 +395,66 @@ circle.selected {
   aspect-ratio: 1;
   background: var(--color);
   border-radius: 50%;
+}
+
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+
+  > * {
+    flex: 1;
+  }
+}
+
+#scatter-story {
+  position: relative;
+  margin-top: 0.5em;
+  margin-bottom: 5.5em;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
+}
+
+#scrolly-2 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+
+  > * {
+    flex: 1;
+  }
+}
+
+#files-story {
+  position: relative;
+}
+
+#files-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
+}
+
+.step, .file-step {
+  padding: 0.35em;
+}
+
+#whitespace {
+  height: 15vh;
+  width: 100%;
+  background: white;
+  margin: 0;
+  padding: 0;
 }
